@@ -1,0 +1,15 @@
+// Top-level build file add config options common to sub-projects/modules.
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:1.1.0'
+    }
+}
+
+allprojects {
+    repositories {
+        jcenter()
+    }
+}

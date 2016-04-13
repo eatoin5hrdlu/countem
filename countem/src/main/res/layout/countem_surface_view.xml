@@ -1,0 +1,42 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ViewFlipper
+        android:id="@+id/viewflipper"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_margin="6dp" >
+
+<!-- don't wrap the following, it won't get initialized! -->
+            <org.ncmls.exhibits.countem.CountemView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone"
+                android:id="@+id/countem_java_surface_view" />
+
+        <RelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:gravity="center"
+            android:orientation="vertical" >
+
+            <TextView android:text="progress displayed here" android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/hbTextViewProgress" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_alignParentTop="true" android:layout_alignParentLeft="true"></TextView>
+            <TextView android:text="action displayed here" android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/hbTextViewAction" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/hbTextViewProgress" android:layout_alignParentLeft="true" android:layout_marginTop="16dp"></TextView>
+            <SeekBar android:id="@+id/HBar" android:max="180"  android:layout_weight="0.1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/hbTextViewAction" android:layout_alignParentLeft="true" android:layout_marginTop="26dp"></SeekBar>
+
+
+            <TextView android:text="progress displayed here"  android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/sbTextViewProgress" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@id/HBar" android:layout_alignParentLeft="true"></TextView>
+            <TextView android:text="action displayed here"  android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/sbTextViewAction" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/sbTextViewProgress" android:layout_alignParentLeft="true" android:layout_marginTop="16dp"></TextView>
+            <SeekBar android:id="@+id/SBar" android:max="100"  android:layout_weight="0.1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/sbTextViewAction" android:layout_alignParentLeft="true" android:layout_marginTop="26dp"></SeekBar>
+
+
+            <TextView android:text="progress displayed here"  android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/vbTextViewProgress" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@id/SBar" android:layout_alignParentLeft="true"></TextView>
+            <TextView android:text="action displayed here"  android:layout_weight="0.1" android:textAppearance="?android:attr/textAppearanceLarge" android:id="@+id/vbTextViewAction" android:layout_height="wrap_content" android:layout_width="wrap_content" android:layout_below="@+id/vbTextViewProgress" android:layout_alignParentLeft="true" android:layout_marginTop="16dp"></TextView>
+            <SeekBar android:id="@+id/VBar" android:max="100"  android:layout_weight="0.1" android:layout_width="match_parent" android:layout_height="wrap_content" android:layout_below="@+id/vbTextViewAction" android:layout_alignParentLeft="true" android:layout_marginTop="26dp"></SeekBar>
+
+        </RelativeLayout>
+
+    </ViewFlipper>
+  </LinearLayout>
