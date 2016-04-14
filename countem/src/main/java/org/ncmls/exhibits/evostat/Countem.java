@@ -65,6 +65,7 @@ public class Countem extends ActionBarActivity implements CvCameraViewListener2,
     // Minimum contour area in percent for contours filtering
     private static double mMinContourArea = 0.1;
     private Mat mSpectrum;
+    private Mat savedImage;
     private boolean firsttime = true;
     // Color radius for range checking in HSV color space
     private Scalar mColorRadius = new Scalar(30,50,50,0);
@@ -222,6 +223,7 @@ public class Countem extends ActionBarActivity implements CvCameraViewListener2,
     @Override
     public boolean onTouch(View v, MotionEvent event) {
         mOpenCvCameraView.setAuto(true);
+        lastTouched = System.currentTimeMillis();
         // Handling left to right screen swap.
         /*
         if (viewFlipper.getDisplayedChild() == 0) {
@@ -249,9 +251,11 @@ public class Countem extends ActionBarActivity implements CvCameraViewListener2,
             setHsvColor(new Scalar(60,127,127));
             firsttime = false;
         }
-        if (lastTouched != -1 && lastTouched > System.currentTimeMillis() + 5000) {
+        if (lastTouched != -1) {
+            if (lastTouched + 5000 < System.currentTimeMillis()) {
+                return savedImage;
+            }
             lastTouched = -1;
-            revert();
         }
         Mat f = inputFrame.rgba();
         Rect[]  bb = new Rect[512];
@@ -262,8 +266,8 @@ public class Countem extends ActionBarActivity implements CvCameraViewListener2,
 
             Core.rectangle(f, new Point(bb[i].x, bb[i].y), new Point(bb[i].x+bb[i].width, bb[i].y+bb[i].height), new Scalar(255, 0, 0), 5);
         }
-       // Core.putText(f, Integer.valueOf(numblobs).toString(), new Point(30,30), 1,1.0,new Scalar(120,100,200),2);
-
+        Core.putText(f, Integer.valueOf(numblobs).toString(), new Point(80,80), 1,5.0,new Scalar(0,0,0),4);
+        savedImage = f.clone();
    /*     Imgproc.threshold(f, f, 127, 255, Imgproc.THRESH_BINARY);
         FeatureDetector fd = FeatureDetector.create(FeatureDetector.SIMPLEBLOB);
         MatOfKeyPoint kp = new MatOfKeyPoint();

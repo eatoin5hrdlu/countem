@@ -2,13 +2,6 @@
 <items version="2" >
 
     <item
-        jar="E:\cygwin\Android\sdk1\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
-        jumboMode="false"
-        revision="21.1.2"
-        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
-        <dex dex="C:\Users\peterr\AndroidStudioProjects\evo\evostat\build\intermediates\pre-dexed\release\support-v4-18.0.0-1f28c33887b4db9e7938af14a17c49d20ac47df9.jar" />
-    </item>
-    <item
         jar="C:\Users\peterr\AndroidStudioProjects\evo\evostat\build\intermediates\exploded-aar\com.android.support\appcompat-v7\18.0.0\classes.jar"
         jumboMode="false"
         revision="21.1.2"
@@ -19,7 +12,7 @@
         jar="C:\Users\peterr\AndroidStudioProjects\countem\countem\build\intermediates\exploded-aar\countem\openCVLibrary2411\unspecified\classes.jar"
         jumboMode="false"
         revision="21.1.2"
-        sha1="8f94c27e3b8f8ee11809d04af35c52e21449aeb3">
+        sha1="2d5b309cb5ee6054cd0e06fddad2a8dd62540ebe">
         <dex dex="C:\Users\peterr\AndroidStudioProjects\countem\countem\build\intermediates\pre-dexed\release\classes-a99f72556a705bd2d402269413d6e705bfc0b77b.jar" />
     </item>
     <item
@@ -35,6 +28,13 @@
         revision="21.1.2"
         sha1="8f11f56e350eacabf2273f646d981356eea0ed77">
         <dex dex="C:\Users\peterr\AndroidStudioProjects\countem\countem\build\intermediates\pre-dexed\release\classes-bd8b8b284fcce929af8442bfb8156051b15b2ff3.jar" />
+    </item>
+    <item
+        jar="E:\cygwin\Android\sdk1\extras\android\m2repository\com\android\support\support-v4\18.0.0\support-v4-18.0.0.jar"
+        jumboMode="false"
+        revision="21.1.2"
+        sha1="44ec51e9d395a47aab135e5e1b556c0007442156">
+        <dex dex="C:\Users\peterr\AndroidStudioProjects\evo\evostat\build\intermediates\pre-dexed\release\support-v4-18.0.0-1f28c33887b4db9e7938af14a17c49d20ac47df9.jar" />
     </item>
 
 </items>
