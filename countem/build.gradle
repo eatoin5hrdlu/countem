@@ -10,6 +10,7 @@ def fixName(variant) {
         def file = output.packageApplication.outputFile
         def fileName = file.name.replace("-release.apk", ".apk")
         output.packageApplication.outputFile = new File(file.parent, fileName)
+
     }
 }
 
