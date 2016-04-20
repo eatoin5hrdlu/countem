@@ -13,9 +13,9 @@ http:location(apk_root,	apk_root, []).
 % 2 Tell this server where the actual file is:
 
 user:file_search_path(apk_root,	'c:/Users/peterr/AndroidStudioProjects/countem/countem') :-
-	current_prolog_flat(windows,true).
-user:file_search_path(apk_root,	'/home/peter/src/countem/countem') :-
-	current_prolog_flat(windows,false).
+	current_prolog_flag(windows,true).
+user:file_search_path(apk_root,	'/home/peter/src/AndroidStudioProjects/countem/countem') :-
+	current_prolog_flag(unix,true).
 
 :- http_handler('/countem.apk', http_reply_file(apk_root('countem.apk'), []), []).
 
